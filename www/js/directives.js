@@ -3,7 +3,7 @@ angular.module('starter.directives', [])
 .directive('solarSystem', ['Planets', function(Planets) {
   return {
     'restrict': 'E',
-    'template': '<h1>solarSystem</h1>',
+    'templateUrl': 'templates/solarsystem.html',
     'scope': {
       'stereoEffect': '=',
       'landscapeMode': '=',
