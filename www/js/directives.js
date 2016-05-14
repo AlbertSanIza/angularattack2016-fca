@@ -1,6 +1,6 @@
 angular.module('starter.directives', [])
 
-.directive('solarSystem', function() {
+.directive('solarSystem', ['Planets', function(Planets) {
   return {
     'restrict': 'E',
     'template': '<h1>solarSystem</h1>',
@@ -56,7 +56,81 @@ angular.module('starter.directives', [])
         }
       };
       var Loader_OBJ = new THREE.OBJLoader(manager);
-
+      // Textures
+      Planets.Loader.load(Planets.baseURL + 'galaxy_starfield.png', function(texture) {
+        Planets.Starfield.Sphere.material = new THREE.MeshPhongMaterial({map: texture, side: THREE.BackSide});
+        scene.add(Planets.Starfield.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'sunmap.jpg', function(texture) {
+        Planets.Sun.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Sun.Sphere);
+        var Sunlight = new THREE.PointLight(0x999900, 1, 16500);
+        Planets.Sun.Sphere.add(Sunlight);
+      });
+      Planets.Loader.load(Planets.baseURL + 'mercurymap.jpg', function(texture) {
+        Planets.Mercury.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Mercury.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'venusmap.jpg', function(texture) {
+        Planets.Venus.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Venus.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'earthmap1k.jpg', function(texture) {
+        Planets.Earth.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Earth.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'moonmap1k.jpg', function(texture) {
+        Planets.EarthMoon.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.EarthMoon.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'marsmap1k.jpg', function(texture) {
+        Planets.Mars.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Mars.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'jupitermap.jpg', function(texture) {
+        Planets.Jupiter.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Jupiter.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'saturnmap.jpg', function(texture) {
+        Planets.Saturn.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Saturn.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'saturn-rings.png', function(texture) {
+        Planets.Saturn.Ring.material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.6});
+        Planets.Saturn.Ring.rotation.x = -45 * (Math.PI / 180);
+        scene.add(Planets.Saturn.Ring);
+      });
+      Planets.Loader.load(Planets.baseURL + 'uranusmap.jpg', function(texture) {
+        Planets.Uranus.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Uranus.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'saturn-rings.png', function(texture) {
+        Planets.Uranus.Ring.material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.6});
+        Planets.Uranus.Ring.rotation.x = -80 * (Math.PI / 180);
+        scene.add(Planets.Uranus.Ring);
+      });
+      Planets.Loader.load(Planets.baseURL + 'neptunemap.jpg', function(texture) {
+        Planets.Neptune.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Neptune.Sphere);
+      });
+      Planets.Loader.load(Planets.baseURL + 'plutomap1k.jpg', function(texture) {
+        Planets.Pluto.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
+        scene.add(Planets.Pluto.Sphere);
+      });
+      scene.add(
+        Planets.Mercury.Orbit,
+        Planets.Venus.Orbit,
+        Planets.Earth.Orbit,
+        Planets.EarthMoon.Orbit,
+        Planets.Mars.Orbit,
+        Planets.Jupiter.Orbit,
+        Planets.Saturn.Orbit,
+        Planets.Uranus.Orbit,
+        Planets.Neptune.Orbit,
+        Planets.Pluto.Orbit
+      );
+      clock = new THREE.Clock();
+      animate();
     };
 
     function animate() {
@@ -70,6 +144,86 @@ angular.module('starter.directives', [])
       resize();
       camera.updateProjectionMatrix();
       controls.update(dt);
+    };
+
+    var t = 100 * Math.random();
+    function render(dt) {
+      // Magic Zone Start
+      t += 0.001;
+      // Planets Rotation
+      Planets.Sun.Sphere.rotation.y += Planets.Properties.Sun.Speed.Rotation;
+      Planets.Mercury.Sphere.rotation.y += Planets.Properties.Mercury.Speed.Rotation;
+      Planets.Venus.Sphere.rotation.y -= Planets.Properties.Venus.Speed.Rotation;
+      Planets.Earth.Sphere.rotation.y += Planets.Properties.Earth.Speed.Rotation;
+      Planets.EarthMoon.Sphere.rotation.y += Planets.Properties.EarthMoon.Speed.Rotation;
+      Planets.Mars.Sphere.rotation.y += Planets.Properties.Mars.Speed.Rotation;
+      Planets.Jupiter.Sphere.rotation.y += Planets.Properties.Jupiter.Speed.Rotation;
+      Planets.Saturn.Sphere.rotation.y += Planets.Properties.Saturn.Speed.Rotation;
+      Planets.Uranus.Sphere.rotation.y -= Planets.Properties.Uranus.Speed.Rotation;
+      Planets.Neptune.Sphere.rotation.y += Planets.Properties.Neptune.Speed.Rotation;
+      Planets.Pluto.Sphere.rotation.y -= Planets.Properties.Pluto.Speed.Rotation;
+      // Planets Translation
+      var planetsSpeed = $scope.planetsSpeed;
+      Planets.Sun.Sphere.position.x = Planets.Properties.Sun.Distance * Math.cos(t * Planets.Properties.Sun.Speed.Translation * planetsSpeed);
+      Planets.Sun.Sphere.position.z = Planets.Properties.Sun.Distance * Math.sin(t * Planets.Properties.Sun.Speed.Translation * planetsSpeed);
+      Planets.Mercury.Sphere.position.x = Planets.Properties.Mercury.Distance * Math.cos(t * Planets.Properties.Mercury.Speed.Translation * planetsSpeed);
+      Planets.Mercury.Sphere.position.z = Planets.Properties.Mercury.Distance * Math.sin(t * Planets.Properties.Mercury.Speed.Translation * planetsSpeed);
+      Planets.Venus.Sphere.position.x = Planets.Properties.Venus.Distance * Math.cos(t * Planets.Properties.Venus.Speed.Translation * planetsSpeed);
+      Planets.Venus.Sphere.position.z = Planets.Properties.Venus.Distance * Math.sin(t * Planets.Properties.Venus.Speed.Translation * planetsSpeed);
+      Planets.Earth.Sphere.position.x = Planets.Properties.Earth.Distance * Math.cos(t * Planets.Properties.Earth.Speed.Translation * planetsSpeed);
+      Planets.Earth.Sphere.position.z = Planets.Properties.Earth.Distance * Math.sin(t * Planets.Properties.Earth.Speed.Translation * planetsSpeed);
+      Planets.EarthMoon.Orbit.position.x = Planets.Earth.Sphere.position.x;
+      Planets.EarthMoon.Orbit.position.z = Planets.Earth.Sphere.position.z;
+      Planets.EarthMoon.Sphere.position.x = Planets.EarthMoon.Orbit.position.x + (Planets.Properties.EarthMoon.Distance * Math.cos(t * Planets.Properties.EarthMoon.Speed.Translation * planetsSpeed));
+      Planets.EarthMoon.Sphere.position.z = Planets.EarthMoon.Orbit.position.z + (Planets.Properties.EarthMoon.Distance * Math.sin(t * Planets.Properties.EarthMoon.Speed.Translation * planetsSpeed));
+      Planets.Mars.Sphere.position.x = Planets.Properties.Mars.Distance * Math.cos(t * Planets.Properties.Mars.Speed.Translation * planetsSpeed);
+      Planets.Mars.Sphere.position.z = Planets.Properties.Mars.Distance * Math.sin(t * Planets.Properties.Mars.Speed.Translation * planetsSpeed);
+      Planets.Jupiter.Sphere.position.x = Planets.Properties.Jupiter.Distance * Math.cos(t * Planets.Properties.Jupiter.Speed.Translation * planetsSpeed);
+      Planets.Jupiter.Sphere.position.z = Planets.Properties.Jupiter.Distance * Math.sin(t * Planets.Properties.Jupiter.Speed.Translation * planetsSpeed);
+      Planets.Saturn.Sphere.position.x = Planets.Properties.Saturn.Distance * Math.cos(t * Planets.Properties.Saturn.Speed.Translation * planetsSpeed);
+      Planets.Saturn.Sphere.position.z = Planets.Properties.Saturn.Distance * Math.sin(t * Planets.Properties.Saturn.Speed.Translation * planetsSpeed);
+      Planets.Saturn.Ring.position.x = Planets.Saturn.Sphere.position.x;
+      Planets.Saturn.Ring.position.z = Planets.Saturn.Sphere.position.z;
+      Planets.Uranus.Sphere.position.x = Planets.Properties.Uranus.Distance * Math.cos(t * Planets.Properties.Uranus.Speed.Translation * planetsSpeed);
+      Planets.Uranus.Sphere.position.z = Planets.Properties.Uranus.Distance * Math.sin(t * Planets.Properties.Uranus.Speed.Translation * planetsSpeed);
+      Planets.Uranus.Ring.position.x = Planets.Uranus.Sphere.position.x;
+      Planets.Uranus.Ring.position.z = Planets.Uranus.Sphere.position.z;
+      Planets.Neptune.Sphere.position.x = Planets.Properties.Neptune.Distance * Math.cos(t * Planets.Properties.Neptune.Speed.Translation * planetsSpeed);
+      Planets.Neptune.Sphere.position.z = Planets.Properties.Neptune.Distance * Math.sin(t * Planets.Properties.Neptune.Speed.Translation * planetsSpeed);
+      Planets.Pluto.Sphere.position.x = Planets.Properties.Pluto.Distance * Math.cos(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
+      Planets.Pluto.Sphere.position.z = Planets.Properties.Pluto.Distance * Math.sin(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
+      // Camera Movement
+      var cameraDirection = camera.getWorldDirection();
+      // Planet / SpaceFighter Colition
+      if(Planets.Distance(camera.position, Planets.Sun.Sphere.position) < Planets.Properties.Sun.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Mercury.Sphere.position) < Planets.Properties.Mercury.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Venus.Sphere.position) < Planets.Properties.Venus.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Earth.Sphere.position) < Planets.Properties.Earth.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.EarthMoon.Sphere.position) < Planets.Properties.EarthMoon.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Mars.Sphere.position) < Planets.Properties.Mars.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Jupiter.Sphere.position) < Planets.Properties.Jupiter.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Saturn.Sphere.position) < Planets.Properties.Saturn.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Uranus.Sphere.position) < Planets.Properties.Uranus.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Neptune.Sphere.position) < Planets.Properties.Neptune.Size) {
+        $scope.$parent.planetVibrate();
+      } else if(Planets.Distance(camera.position, Planets.Pluto.Sphere.position) < Planets.Properties.Pluto.Size) {
+        $scope.$parent.planetVibrate();
+      }
+      // Magic Zone End
+      if($scope.stereoEffect == true) {
+        effect.render(scene, camera);
+      } else {
+        renderer.render(scene, camera);
+      }
     };
 
     function fullscreen() {
@@ -99,4 +253,4 @@ angular.module('starter.directives', [])
     init();
 
   };
-})
+}])
