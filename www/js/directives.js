@@ -309,8 +309,17 @@ angular.module('starter.directives', [])
     'link': link
   };
   function link($scope, $element, $attr) {
+
+    $scope.hideTitleView = true;
+
     $scope.goToView = function(theView) {
       $scope.selectedView = theView;
+      if($scope.selectedView == "top") {
+        $scope.hideTitleView = true;
+      } else {
+        $scope.selectedViewName = $scope.selectedView.toUpperCase();
+        $scope.hideTitleView = false;
+      }
     }
   }
 })

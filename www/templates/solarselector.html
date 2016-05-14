@@ -9,3 +9,7 @@
 <button class="button button-clear button-calm" ng-click="goToView('neptune')">Neptune</button>
 <button class="button button-clear button-calm" ng-click="goToView('pluto')">Pluto</button>
 <button class="button button-clear button-assertive" ng-click="goToView('top')">Top View</button>
+<br>
+<div ng-hide="hideTitleView" class="button button-outline button-positive">
+  {{selectedViewName}}
+</div>
