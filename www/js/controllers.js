@@ -2,6 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('MainCtrl', function($scope, $ionicModal) {
 
+  $scope.Data = {
+    stereoEffect: false,
+    planetsSpeed: 1
+  };
+
   $ionicModal.fromTemplateUrl('templates/settings.html', {
     scope: $scope,
     animation: 'slide-in-up'
