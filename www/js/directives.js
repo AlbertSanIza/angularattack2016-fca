@@ -16,7 +16,6 @@ angular.module('starter.directives', [])
 
     var scene, camera, renderer, element, container, effect, controls, ambientLight, clock;
 
-
     function init() {
       // Main Scene
       scene = new THREE.Scene();
@@ -247,3 +246,20 @@ angular.module('starter.directives', [])
 
   };
 }])
+
+.directive('solarSelector', function() {
+  return {
+    'restrict': 'E',
+    'templateUrl': 'templates/solarselector.html',
+    'scope': {
+      'selectedView': '='
+    },
+    'link': link
+  };
+  function link($scope, $element, $attr) {
+    $scope.goToView = function(theView) {
+      $scope.selectedView = theView;
+      console.log("view: " + $scope.selectedView);
+    }
+  }
+})

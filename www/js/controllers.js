@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, $ionicModal) {
 
   $scope.Data = {
+    selectedView: 'top',
     stereoEffect: false,
     planetsSpeed: 1
   };

@@ -7,6 +7,7 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/solarsystem.css" rel="stylesheet">
+    <link href="css/solarselector.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/three/three.min.js"></script>
     <script src="lib/three/StereoEffect.js"></script>
@@ -21,6 +22,7 @@
   </head>
   <body ng-app="starter" ng-controller="MainCtrl">
     <ion-content scroll="false" padding="false">
+      <solar-selector selected-view="Data.selectedView"></solar-selector>
       <solar-system stereo-effect="Data.stereoEffect" planets-speed="Data.planetsSpeed"></solar-system>
     </ion-content>
   </body>
