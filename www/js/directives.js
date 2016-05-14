@@ -30,7 +30,6 @@ angular.module('starter.directives', [])
       controls.target.set(camera.position.x + 0.15, camera.position.y, camera.position.z);
       controls.noPan = true;
       controls.noZoom = true;
-      controls.noZoom = true;
       function setOrientationControls(e) {
         if (!e.alpha) {
           return;
