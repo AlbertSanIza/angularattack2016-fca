@@ -5,6 +5,8 @@ angular.module('starter.directives', [])
     'restrict': 'E',
     'templateUrl': 'templates/solarsystem.html',
     'scope': {
+      'selectedView': '=',
+
       'stereoEffect': '=',
       'landscapeMode': '=',
       'moveStarFighter': '=',
@@ -20,7 +22,7 @@ angular.module('starter.directives', [])
       // Main Scene
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, Planets.Properties.Starfield.Size + 100);
-      camera.position.set(1000, 900, 0);
+      camera.position.set(0, 2000, 0);
       scene.add(camera);
       renderer = new THREE.WebGLRenderer({antialias: true});
       element = renderer.domElement;
@@ -130,6 +132,7 @@ angular.module('starter.directives', [])
         Planets.Pluto.Orbit
       );
       clock = new THREE.Clock();
+
       animate();
     };
 
@@ -196,7 +199,56 @@ angular.module('starter.directives', [])
       // Camera Movement
       var cameraDirection = camera.getWorldDirection();
       cameramove -= 10;
+      // Look At
+      switch ($scope.selectedView) {
+        case "top":
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        camera.position.set(0, 5800, 0);
+        break;
+        case "sun":
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        camera.position.set(Planets.Sun.Sphere.position.x - 1000, 500, Planets.Sun.Sphere.position.z - 1000);
+        break;
+        case "mercury":
+        camera.lookAt(new THREE.Vector3(Planets.Mercury.Sphere.position.x, Planets.Mercury.Sphere.position.y, Planets.Mercury.Sphere.position.z));
+        camera.position.set(Planets.Mercury.Sphere.position.x - 100, 110, Planets.Mercury.Sphere.position.z - 100);
+        break;
+        case "venus":
+        camera.lookAt(new THREE.Vector3(Planets.Venus.Sphere.position.x, Planets.Venus.Sphere.position.y, Planets.Venus.Sphere.position.z));
+        camera.position.set(Planets.Venus.Sphere.position.x - 200, 120, Planets.Venus.Sphere.position.z - 200);
+        break;
+        case "earth":
+        camera.lookAt(new THREE.Vector3(Planets.Earth.Sphere.position.x, Planets.Earth.Sphere.position.y, Planets.Earth.Sphere.position.z));
+        camera.position.set(Planets.Earth.Sphere.position.x - 240, 130, Planets.Earth.Sphere.position.z - 240);
+        break;
+        case "mars":
+        camera.lookAt(new THREE.Vector3(Planets.Mars.Sphere.position.x, Planets.Mars.Sphere.position.y, Planets.Mars.Sphere.position.z));
+        camera.position.set(Planets.Mars.Sphere.position.x - 150, 100, Planets.Mars.Sphere.position.z - 150);
+        break;
+        case "jupiter":
+        camera.lookAt(new THREE.Vector3(Planets.Jupiter.Sphere.position.x, Planets.Jupiter.Sphere.position.y, Planets.Jupiter.Sphere.position.z));
+        camera.position.set(Planets.Jupiter.Sphere.position.x - 850, 800, Planets.Jupiter.Sphere.position.z - 800);
+        break;
+        case "saturn":
+        camera.lookAt(new THREE.Vector3(Planets.Saturn.Sphere.position.x, Planets.Saturn.Sphere.position.y, Planets.Saturn.Sphere.position.z));
+        camera.position.set(Planets.Saturn.Sphere.position.x - 850, 800, Planets.Saturn.Sphere.position.z - 800);
+        break;
+        case "uranus":
+        camera.lookAt(new THREE.Vector3(Planets.Uranus.Sphere.position.x, Planets.Uranus.Sphere.position.y, Planets.Uranus.Sphere.position.z));
+        camera.position.set(Planets.Uranus.Sphere.position.x - 500, 100, Planets.Uranus.Sphere.position.z - 500);
+        break;
+        case "neptune":
+        camera.lookAt(new THREE.Vector3(Planets.Neptune.Sphere.position.x, Planets.Neptune.Sphere.position.y, Planets.Neptune.Sphere.position.z));
+        camera.position.set(Planets.Neptune.Sphere.position.x - 500, 100, Planets.Neptune.Sphere.position.z - 500);
+        break;
+        case "pluto":
+        camera.lookAt(new THREE.Vector3(Planets.Pluto.Sphere.position.x, Planets.Pluto.Sphere.position.y, Planets.Pluto.Sphere.position.z));
+        camera.position.set(Planets.Pluto.Sphere.position.x - 240, 100, Planets.Pluto.Sphere.position.z - 240);
+        break;
+      }
+      //console.log($scope.selectedView);
       //camera.position.set(0, cameramove, cameramove);
+      //camera.lookAt(new THREE.Vector3(Planets.Sun.Sphere.position.x,0,Planets.Sun.Sphere.position.z));
       // Planet / SpaceFighter Colition
       if(Planets.Distance(camera.position, Planets.Sun.Sphere.position) < Planets.Properties.Sun.Size) {
       } else if(Planets.Distance(camera.position, Planets.Mercury.Sphere.position) < Planets.Properties.Mercury.Size) {
@@ -259,7 +311,6 @@ angular.module('starter.directives', [])
   function link($scope, $element, $attr) {
     $scope.goToView = function(theView) {
       $scope.selectedView = theView;
-      console.log("view: " + $scope.selectedView);
     }
   }
 })
