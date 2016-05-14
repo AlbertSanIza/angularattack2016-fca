@@ -1,8 +1,7 @@
-solar-selector {
+solar-selection {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  bottom: 0px;
   width: 100%;
-  height: 20px;
+  height: 60px;
   text-align: center;
 }

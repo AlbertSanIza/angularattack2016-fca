@@ -302,5 +302,16 @@ angular.module('starter.directives', [])
         $scope.hideTitleView = false;
       }
     }
-  }
+  };
+})
+
+.directive('solarSelection', function() {
+  return {
+    'restrict': 'E',
+    'templateUrl': 'templates/solarselection.html',
+    'link': link
+  };
+  function link($scope, $element, $attr) {
+    
+  };
 })
