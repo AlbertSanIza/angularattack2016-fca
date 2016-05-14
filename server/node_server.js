@@ -1,17 +1,15 @@
-var express = require('express'),
-    app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
-    
-server.listen(3000);
+var app = require('express').createServer();
+var io = require('socket.io')(app);
 
-app.get('/', function(req, res){
-    res.sendfile(__dirname + '/index.html');
+app.listen(80);
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
 });
 
-
-io.sockets.on('connection', function(socket){
-    socket.on('send message',function(data){
-    io.sockets.emit('new message', data);
-    )};
-)};
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
