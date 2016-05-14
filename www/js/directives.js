@@ -6,11 +6,7 @@ angular.module('starter.directives', [])
     'templateUrl': 'templates/solarsystem.html',
     'scope': {
       'selectedView': '=',
-
-      'stereoEffect': '=',
-      'landscapeMode': '=',
-      'moveStarFighter': '=',
-      'planetsSpeed': '='
+      'stereoEffect': '='
     },
     'link': link
   };
@@ -119,20 +115,8 @@ angular.module('starter.directives', [])
         Planets.Pluto.Sphere.material = new THREE.MeshPhongMaterial({map: texture});
         scene.add(Planets.Pluto.Sphere);
       });
-      scene.add(
-        Planets.Mercury.Orbit,
-        Planets.Venus.Orbit,
-        Planets.Earth.Orbit,
-        Planets.EarthMoon.Orbit,
-        Planets.Mars.Orbit,
-        Planets.Jupiter.Orbit,
-        Planets.Saturn.Orbit,
-        Planets.Uranus.Orbit,
-        Planets.Neptune.Orbit,
-        Planets.Pluto.Orbit
-      );
+      scene.add(Planets.Mercury.Orbit, Planets.Venus.Orbit, Planets.Earth.Orbit, Planets.EarthMoon.Orbit, Planets.Mars.Orbit, Planets.Jupiter.Orbit, Planets.Saturn.Orbit, Planets.Uranus.Orbit, Planets.Neptune.Orbit, Planets.Pluto.Orbit);
       clock = new THREE.Clock();
-
       animate();
     };
 
@@ -150,7 +134,8 @@ angular.module('starter.directives', [])
     };
 
     var t = 100 * Math.random();
-    var cameramove = 1000;
+    var updater = true;
+
     function render(dt) {
       // Magic Zone Start
       t += 0.001;
@@ -167,7 +152,7 @@ angular.module('starter.directives', [])
       Planets.Neptune.Sphere.rotation.y += Planets.Properties.Neptune.Speed.Rotation;
       Planets.Pluto.Sphere.rotation.y -= Planets.Properties.Pluto.Speed.Rotation;
       // Planets Translation
-      var planetsSpeed = $scope.planetsSpeed;
+      var planetsSpeed = 1;
       Planets.Sun.Sphere.position.x = Planets.Properties.Sun.Distance * Math.cos(t * Planets.Properties.Sun.Speed.Translation * planetsSpeed);
       Planets.Sun.Sphere.position.z = Planets.Properties.Sun.Distance * Math.sin(t * Planets.Properties.Sun.Speed.Translation * planetsSpeed);
       Planets.Mercury.Sphere.position.x = Planets.Properties.Mercury.Distance * Math.cos(t * Planets.Properties.Mercury.Speed.Translation * planetsSpeed);
@@ -197,8 +182,7 @@ angular.module('starter.directives', [])
       Planets.Pluto.Sphere.position.x = Planets.Properties.Pluto.Distance * Math.cos(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
       Planets.Pluto.Sphere.position.z = Planets.Properties.Pluto.Distance * Math.sin(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
       // Camera Movement
-      var cameraDirection = camera.getWorldDirection();
-      cameramove -= 10;
+      // var cameraDirection = camera.getWorldDirection();
       // Look At
       switch ($scope.selectedView) {
         case "top":
@@ -246,9 +230,6 @@ angular.module('starter.directives', [])
         camera.position.set(Planets.Pluto.Sphere.position.x - 240, 100, Planets.Pluto.Sphere.position.z - 240);
         break;
       }
-      //console.log($scope.selectedView);
-      //camera.position.set(0, cameramove, cameramove);
-      //camera.lookAt(new THREE.Vector3(Planets.Sun.Sphere.position.x,0,Planets.Sun.Sphere.position.z));
       // Planet / SpaceFighter Colition
       if(Planets.Distance(camera.position, Planets.Sun.Sphere.position) < Planets.Properties.Sun.Size) {
       } else if(Planets.Distance(camera.position, Planets.Mercury.Sphere.position) < Planets.Properties.Mercury.Size) {

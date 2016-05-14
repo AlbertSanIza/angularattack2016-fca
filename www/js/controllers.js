@@ -4,8 +4,7 @@ angular.module('starter.controllers', [])
 
   $scope.Data = {
     selectedView: 'top',
-    stereoEffect: false,
-    planetsSpeed: 1
+    stereoEffect: false
   };
 
   $ionicModal.fromTemplateUrl('templates/settings.html', {

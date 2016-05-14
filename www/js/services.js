@@ -44,7 +44,6 @@ angular.module('starter.services', [])
     return distance;
   };
 
-
   this.Properties = {
     Starfield: {
       Size: 16000
@@ -138,7 +137,7 @@ angular.module('starter.services', [])
       }
     }
   };
-  
+
   this.Starfield = {
     Sphere: SetPlanet(this.Properties.Starfield.Size)
   };
