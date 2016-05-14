@@ -315,7 +315,19 @@ angular.module('starter.directives', [])
     'link': link
   };
   function link($scope, $element, $attr) {
-    $scope.openInfo = function() {
+
+    $scope.localSelectedView = "";
+
+    $scope.$watch('selectedView', function() {
+      if($scope.selectedView == "top") {
+        $scope.localSelectedView = "SOLAR SYSTEM";
+      } else {
+        $scope.localSelectedView = $scope.selectedView.toUpperCase();
+      }
+    });
+
+    $scope.openInfo = function(theView) {
+
     };
   };
 })
