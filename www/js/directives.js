@@ -20,7 +20,8 @@ angular.module('starter.directives', [])
     function init() {
       // Main Scene
       scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, 2000);
+      camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, Planets.Properties.Starfield.Size + 100);
+      camera.position.set(1000, 900, 0);
       scene.add(camera);
       renderer = new THREE.WebGLRenderer({antialias: true});
       element = renderer.domElement;
