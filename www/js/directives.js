@@ -309,9 +309,13 @@ angular.module('starter.directives', [])
   return {
     'restrict': 'E',
     'templateUrl': 'templates/solarselection.html',
+    'scope': {
+      'selectedView': '='
+    },
     'link': link
   };
   function link($scope, $element, $attr) {
-    
+    $scope.openInfo = function() {
+    };
   };
 })
