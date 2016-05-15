@@ -24,10 +24,6 @@
   <title></title>
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/solarsystem.css" rel="stylesheet">
-  <link href="css/solarselector.css" rel="stylesheet">
-  <link href="css/solarselection.css" rel="stylesheet">
-  <link href="css/solarcarrousel.css" rel="stylesheet">
   <script src="lib/ionic/js/ionic.bundle.js"></script>
   <script src="lib/three/three.min.js"></script>
   <script src="lib/three/StereoEffect.js"></script>
@@ -49,6 +45,9 @@
     <solar-carrousel selected-view="Data.selectedView" landscape-mode="Data.landscapeMode"></solar-carrousel>
     <div class="topControls" ng-show="Data.landscapeMode" ng-click="Move()"></div>
     <div class="shadow" ng-show="Data.stereoEffect"></div>
+    <div class="bottomControlsClick" ng-show="Data.landscapeMode && !Data.moveStarFighter">
+      CLICK ON SCREEN TO FLY
+    </div>
     <div class="bottomControls" ng-show="Data.landscapeMode">
       <button class="button button-clear" ng-click="cardboardMode()">
         <img src="img/cardboard_logo.png" style="height: 30px;">
