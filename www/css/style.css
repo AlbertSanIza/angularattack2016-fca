@@ -19,6 +19,14 @@
   bottom: 0px;
   width: 100%;
 }
+.bottomControlsClick {
+  position: absolute;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px 8px red;
+}
 .shadow {
   -webkit-appearance: none;
   position: absolute;
