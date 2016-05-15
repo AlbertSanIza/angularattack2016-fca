@@ -30,6 +30,12 @@ function theTimeSync() {
 };
 theTimeSync();
 
+function speedCheck() {
+  io.emit('speed check', "doit");
+  setTimeout(theTimeSync, 10000);
+};
+speedCheck();
+
 io.on('connection', function(socket) {
 
   io.emit('theTime', theTime);

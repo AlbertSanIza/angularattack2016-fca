@@ -353,6 +353,15 @@ angular.module('starter.directives', [])
       }
     });
 
+    socket.on('speed check', function(msg) {
+      var diff = tChangeRate - 0.001;
+      if(diff >= 0) {
+        tChangeRate = tChangeRate - (Math.abs(diff) / 10);
+      } else {
+        tChangeRate = tChangeRate + (Math.abs(diff) / 10);
+      }
+    });
+
   };
 }])
 
