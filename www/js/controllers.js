@@ -5,7 +5,8 @@ angular.module('starter.controllers', [])
   $scope.Data = {
     selectedView: 'top',
     isMobile: false,
-    stereoEffect: false
+    stereoEffect: false,
+    landscapeMode: false
   };
 
   $ionicModal.fromTemplateUrl('templates/description.html', {
@@ -24,7 +25,13 @@ angular.module('starter.controllers', [])
 
   function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
+      // Landscape - true
+      $scope.Data.landscapeMode = true;
+      $scope.$apply();
     } else {
+      // Portrait - false
+      $scope.Data.landscapeMode = false;
+      $scope.$apply();
     }
   }
   window.addEventListener('orientationchange', readDeviceOrientation, false);
