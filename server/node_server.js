@@ -9,6 +9,9 @@ var time = 1/10*2;
 
 function timezone()
 {
+	if(integer>=2147483646){
+		integer=0;
+	}
    integer=integer+.0001;
    //console.log();
    setTimeout(timezone, time);
