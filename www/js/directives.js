@@ -16,8 +16,7 @@ angular.module('starter.directives', [])
   function link($scope, $element, $attr) {
 
     var t = 100 * Math.random();
-    var tChangeRate = 0.001, tDelta = 0;
-    var socket = io('http://45.55.7.57:3000');
+    var tChangeRate = 0.0015;
     var scene, camera, renderer, element, container, effect, controls, ambientLight, clock;
     var StarFighter, StarFighterPosition = {x: 0, y: 0, z: 0}, StarFighterEngineLight, StarFighterSpeed = 1.5;
 
@@ -157,9 +156,8 @@ angular.module('starter.directives', [])
     };
 
     function animate() {
-      setTimeout(function() {
-        requestAnimationFrame(animate);
-      }, 1000/24);
+      var elapsedSeconds = clock.getElapsedTime();
+      requestAnimationFrame(animate);
       update(clock.getDelta());
       render(clock.getDelta());
     };
@@ -173,7 +171,6 @@ angular.module('starter.directives', [])
     function render(dt) {
       // Magic Zone Start
       t += tChangeRate;
-      tDelta += 1;
       // Planets Rotation
       Planets.Sun.Sphere.rotation.y += Planets.Properties.Sun.Speed.Rotation;
       Planets.Mercury.Sphere.rotation.y += Planets.Properties.Mercury.Speed.Rotation;
@@ -334,10 +331,6 @@ angular.module('starter.directives', [])
           StarFighter.visible = false;
         }
       }
-    });
-
-    socket.on('theTime', function(msg) {
-      t = msg;
     });
 
   };
