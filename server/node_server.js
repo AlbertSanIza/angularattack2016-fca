@@ -13,7 +13,7 @@ function timezone()
 		integer=0;
 	}
    integer=integer+.0001;
-   //console.log();
+   //console.log(integer);
    setTimeout(timezone, time);
 }
 
@@ -23,8 +23,12 @@ timezone();
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
+	io.emit('chat message', integer);
+	io.emit('time', integer);
   });
 });
+
+
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
