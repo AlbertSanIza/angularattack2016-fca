@@ -281,6 +281,9 @@ angular.module('starter.directives', [])
           camera.position.set(Planets.Pluto.Sphere.position.x - 240, 100, Planets.Pluto.Sphere.position.z - 240);
           break;
         }
+        StarFighterPosition.x = camera.position.x;
+        StarFighterPosition.y = camera.position.y;
+        StarFighterPosition.z = camera.position.z;
       }
       // Show StarFighter
       if(StarFighter != null && $scope.landscapeMode == true) {
