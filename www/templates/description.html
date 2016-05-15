@@ -9,9 +9,9 @@
     <div class="list card">
       <div class="item">
         <h1>{{infoToDisplay.name}}</h1>
-        <h2>Discovered in 1955</h2>
+        <h2>"{{infoToDisplay.nickname}}"</h2>
       </div>
-      <div class="item item-body">
+      <div class="item item-body" align="justify">
         <img class="full-image" ng-src="img/planets-mini/{{infoToDisplay.img}}">
         Description:
         <p>{{infoToDisplay.description}}</p>
@@ -27,8 +27,6 @@
         <p>{{infoToDisplay.orbital}}</p>
         Gravity:
         <p>{{infoToDisplay.gravity}}</p>
-        Nickname
-        <p>{{infoToDisplay.nickname}}</p>
       </div>
     </div>
   </ion-content>
