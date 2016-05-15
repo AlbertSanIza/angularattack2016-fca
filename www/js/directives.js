@@ -145,6 +145,7 @@ angular.module('starter.directives', [])
           StarFighterEngineLight = new THREE.PointLight(0x00ccff, 1, 20);
           StarFighterEngineLight.position.set(0, 0, -10);
           camera.add(StarFighterEngineLight);
+          StarFighter.visible = false;
         });
       }
       clock = new THREE.Clock();
@@ -215,7 +216,6 @@ angular.module('starter.directives', [])
       // var cameraDirection = camera.getWorldDirection();
       // Look At
       if($scope.landscapeMode) {
-        
       } else {
         switch ($scope.selectedView) {
           case "top":
@@ -310,6 +310,16 @@ angular.module('starter.directives', [])
     };
 
     init();
+
+    $scope.$watch('landscapeMode', function() {
+      if(StarFighter) {
+        if($scope.landscapeMode) {
+          StarFighter.visible = true;
+        } else {
+          StarFighter.visible = false;
+        }
+      }
+    });
 
   };
 }])
