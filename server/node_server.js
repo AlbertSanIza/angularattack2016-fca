@@ -1,3 +1,4 @@
+// very cool and everything but sync sacrifices some stuff like performance so we are not using it
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -13,28 +14,17 @@ function theTimeChange() {
   if(theTime >= 2147483600) {
     theTime = 0;
   }
-  theTime = theTime + .0009;
+  theTime = theTime + .0008;
   setTimeout(theTimeChange, theTimeFraction);
 };
 theTimeChange();
 
-function timeCheck() {
-  io.emit('time check', theTime);
-  setTimeout(timeCheck, 500);
-};
-timeCheck();
-
 function theTimeSync() {
   io.emit('theTime', theTime);
-  setTimeout(theTimeSync, 5000);
+  setTimeout(theTimeSync, 10000);
 };
 theTimeSync();
 
-function speedCheck() {
-  io.emit('speed check', "doit");
-  setTimeout(theTimeSync, 10000);
-};
-speedCheck();
 
 io.on('connection', function(socket) {
 
@@ -42,9 +32,6 @@ io.on('connection', function(socket) {
 
   socket.on('chat message', function(msg) {
     io.emit('chat message', msg);
-  });
-  socket.on('time check', function(msg) {
-    io.emit('time check', t);
   });
 
 });
