@@ -157,8 +157,15 @@ angular.module('starter.directives', [])
     };
 
     function animate() {
+      /*
       var elapsedSeconds = clock.getElapsedTime();
       requestAnimationFrame(animate);
+      update(clock.getDelta());
+      render(clock.getDelta());
+      */
+      setTimeout(function() {
+        requestAnimationFrame(animate);
+      }, 1000/24);
       update(clock.getDelta());
       render(clock.getDelta());
     };
@@ -338,30 +345,7 @@ angular.module('starter.directives', [])
     socket.on('theTime', function(msg) {
       t = msg;
     });
-
-    socket.on('time check', function(msg) {
-      var diff = t - msg;
-      if(tDelta > 500) {
-        tDelta = 0;
-      } else {
-        if(diff >= 0) {
-          tChangeRate = tChangeRate - 0.0001;
-        } else {
-          tChangeRate = tChangeRate + 0.0001;
-        }
-        tDelta = 0;
-      }
-    });
-
-    socket.on('speed check', function(msg) {
-      var diff = tChangeRate - 0.001;
-      if(diff >= 0) {
-        tChangeRate = tChangeRate - (Math.abs(diff) / 200);
-      } else {
-        tChangeRate = tChangeRate + (Math.abs(diff) / 200);
-      }
-    });
-
+    
   };
 }])
 
