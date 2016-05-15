@@ -199,8 +199,8 @@ angular.module('starter.services', [])
     mass: "1.989 × 10^30 kg",
     length: "-----",
     orbital: "-----",
-    gravity:"274 m/s²"
-    nickname: "The King Of The Sky",
+    gravity:"274 m/s²",
+    nickname: "The King Of The Sky"
   }
   this.Mercury = {
     img: "mercury.jpg",
