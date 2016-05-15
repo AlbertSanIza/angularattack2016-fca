@@ -13,8 +13,8 @@ angular.module('starter.controllers', [])
   }).then(function(modal) {
     $scope.descriptionModal = modal;
   });
-  $scope.openDescriptionModal = function() {
-    $scope.infoToDisplay = PlanetsInfo.set("sun");
+  $scope.openDescriptionModal = function(theView) {
+    $scope.infoToDisplay = PlanetsInfo.set(theView);
     $scope.descriptionModal.show();
   };
   $scope.closeDescriptionModal = function() {

@@ -314,9 +314,7 @@ angular.module('starter.directives', [])
     'link': link
   };
   function link($scope, $element, $attr) {
-
     $scope.localSelectedView = "";
-
     $scope.$watch('selectedView', function() {
       if($scope.selectedView == "top") {
         $scope.localSelectedView = "SOLAR SYSTEM";
@@ -324,9 +322,8 @@ angular.module('starter.directives', [])
         $scope.localSelectedView = $scope.selectedView.toUpperCase();
       }
     });
-
     $scope.openInfo = function() {
-      $scope.$parent.openDescriptionModal();
+      $scope.$parent.openDescriptionModal($scope.selectedView);
     };
   };
 })
