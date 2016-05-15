@@ -7,7 +7,8 @@ angular.module('starter.directives', [])
     'scope': {
       'selectedView': '=',
       'isMobile': '=',
-      'stereoEffect': '='
+      'stereoEffect': '=',
+      'landscapeMode': '='
     },
     'link': link
   };
@@ -316,7 +317,8 @@ angular.module('starter.directives', [])
     'restrict': 'E',
     'templateUrl': 'templates/solarselector.html',
     'scope': {
-      'selectedView': '='
+      'selectedView': '=',
+      'landscapeMode': '='
     },
     'link': link
   };
@@ -341,7 +343,8 @@ angular.module('starter.directives', [])
     'restrict': 'E',
     'templateUrl': 'templates/solarselection.html',
     'scope': {
-      'selectedView': '='
+      'selectedView': '=',
+      'landscapeMode': '='
     },
     'link': link
   };
