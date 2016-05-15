@@ -28,16 +28,23 @@ angular.module('starter.controllers', [])
     $scope.Data.moveStarFighter = !$scope.Data.moveStarFighter;
   };
 
+  $scope.cardboardMode = function() {
+    $scope.Data.stereoEffect = !$scope.Data.stereoEffect;
+  };
+
   function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
       // Landscape - true
-      $scope.Data.landscapeMode = true;
-      $scope.$apply();
+      $scope.$apply(function () {
+        $scope.Data.landscapeMode = true;
+      });
     } else {
       // Portrait - false
-      $scope.Data.landscapeMode = false;
-      $scope.Data.moveStarFighter = false;
-      $scope.$apply();
+      $scope.$apply(function () {
+        $scope.Data.landscapeMode = false;
+        $scope.Data.moveStarFighter = false;
+        $scope.Data.stereoEffect = false;
+      });
     }
   }
   window.addEventListener('orientationchange', readDeviceOrientation, false);

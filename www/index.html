@@ -47,6 +47,11 @@
     <solar-selector selected-view="Data.selectedView" landscape-mode="Data.landscapeMode" ></solar-selector>
     <solar-selection selected-view="Data.selectedView" landscape-mode="Data.landscapeMode"></solar-selection>
     <solar-carrousel selected-view="Data.selectedView" landscape-mode="Data.landscapeMode"></solar-carrousel>
+    <div class="bottomControls" ng-show="Data.landscapeMode">
+      <button class="button button-clear" ng-click="cardboardMode()">
+        <img src="img/cardboard_logo.png" style="height: 30px;">
+      </button>
+    </div>
   </ion-content>
 </body>
 </html>
