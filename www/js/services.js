@@ -313,14 +313,14 @@ angular.module('starter.services', [])
   this.Top= {
     img: "top.jpg",
     name: "Solar System",
-    description: "-----",
+    description: "A solar system refers to a star and all the objects that travel in orbit around it. Our solar system consists of the sun - our star - eight planets and their natural satellites (such as our moon); dwarf planets; asteroids and comets. Our solar system is located in an outward spiral of the Milky Way galaxy.",
     radius: "-----",
     distance: "-----",
-    mass: "-----",
+    mass: "The principal component of the Solar System is the Sun, a G2 main-sequence star that contains 99.86% of the system's known mass and dominates it gravitationally. The Sun's four largest orbiting bodies, the giant planets, account for 99% of the remaining mass, with Jupiter and Saturn together comprising more than 90%",
     length: "-----",
     orbital: "-----",
     gravity: "-----",
-    nickname: "-----"
+    nickname: "Planetary system"
   }
   this.set = function(theView) {
     console.log(theView);
