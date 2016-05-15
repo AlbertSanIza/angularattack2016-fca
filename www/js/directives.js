@@ -8,7 +8,8 @@ angular.module('starter.directives', [])
       'selectedView': '=',
       'isMobile': '=',
       'stereoEffect': '=',
-      'landscapeMode': '='
+      'landscapeMode': '=',
+      'moveStarFighter': '='
     },
     'link': link
   };
@@ -213,9 +214,26 @@ angular.module('starter.directives', [])
       Planets.Pluto.Sphere.position.x = Planets.Properties.Pluto.Distance * Math.cos(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
       Planets.Pluto.Sphere.position.z = Planets.Properties.Pluto.Distance * Math.sin(t * Planets.Properties.Pluto.Speed.Translation * planetsSpeed);
       // Camera Movement
-      // var cameraDirection = camera.getWorldDirection();
       // Look At
+      var cameraDirection = camera.getWorldDirection();
       if($scope.landscapeMode) {
+        if($scope.moveStarFighter == true) {
+          if(StarFighter.position.z > -20) {
+            StarFighter.position.z -= 0.1;
+          }
+          if(StarFighterSpeed < 4) {
+            StarFighterSpeed += 0.01;
+          }
+          StarFighterPosition.x += cameraDirection.x * StarFighterSpeed;
+          StarFighterPosition.y += cameraDirection.y * StarFighterSpeed;
+          StarFighterPosition.z += cameraDirection.z * StarFighterSpeed;
+          camera.position.set(StarFighterPosition.x, StarFighterPosition.y, StarFighterPosition.z);
+        } else {
+          if(StarFighter.position.z < -17) {
+            StarFighter.position.z += 0.1;
+          }
+          StarFighterSpeed = 1.5;
+        }
       } else {
         switch ($scope.selectedView) {
           case "top":

@@ -6,7 +6,8 @@ angular.module('starter.controllers', [])
     selectedView: 'top',
     isMobile: false,
     stereoEffect: false,
-    landscapeMode: false
+    landscapeMode: false,
+    moveStarFighter: false
   };
 
   $ionicModal.fromTemplateUrl('templates/description.html', {
@@ -23,6 +24,10 @@ angular.module('starter.controllers', [])
     $scope.descriptionModal.hide();
   };
 
+  $scope.Move = function() {
+    $scope.Data.moveStarFighter = !$scope.Data.moveStarFighter;
+  };
+
   function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
       // Landscape - true
@@ -31,6 +36,7 @@ angular.module('starter.controllers', [])
     } else {
       // Portrait - false
       $scope.Data.landscapeMode = false;
+      $scope.Data.moveStarFighter = false;
       $scope.$apply();
     }
   }
