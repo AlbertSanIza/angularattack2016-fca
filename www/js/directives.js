@@ -157,12 +157,6 @@ angular.module('starter.directives', [])
     };
 
     function animate() {
-      /*
-      var elapsedSeconds = clock.getElapsedTime();
-      requestAnimationFrame(animate);
-      update(clock.getDelta());
-      render(clock.getDelta());
-      */
       setTimeout(function() {
         requestAnimationFrame(animate);
       }, 1000/24);
@@ -345,7 +339,7 @@ angular.module('starter.directives', [])
     socket.on('theTime', function(msg) {
       t = msg;
     });
-    
+
   };
 }])
 
