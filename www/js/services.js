@@ -191,12 +191,14 @@ angular.module('starter.services', [])
 
 .service('PlanetsInfo', function () {
   this.Sun = {
+    img: "sun.jpg",
     name: "Sun",
     description: " The sun, a huge sphere of mostly ionized gas, supports life on Earth. The connection and interactions between the sun and Earth drive the seasons, ocean currents, weather and climate. It is the center of our solar system.",
     radius:"695,700 km",
     mass: "1.989 × 10^30 kg"
   }
   this.Mercury = {
+    img: "mercury.jpg",
     name: "Mercury",
     description: "Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth.",
     radius: "2,440 km",
@@ -207,56 +209,62 @@ angular.module('starter.services', [])
     gravity: "3.7 m/s²"
   }
   this.Venus = {
+    img: "venus.jpg",
     name: "Venus",
     description: " Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite.",
-     radius:"6,052 km",
-     distance:"108.2 million km",
-     mass: "4.867 × 10^24 kg",
-     length: "116d 18h 0m",
-     gravity: "8.87m/s²",
-     orbital:"225 days"
+    radius:"6,052 km",
+    distance:"108.2 million km",
+    mass: "4.867 × 10^24 kg",
+    length: "116d 18h 0m",
+    gravity: "8.87m/s²",
+    orbital:"225 days"
   }
   this.Earth = {
+    img: "earth.jpg",
     name: "Earth",
     description:" Earth, our home planet, is the only planet in our solar system known to harbor life - life that is incredibly diverse. All the things we need to survive exist under a thin layer of atmosphere that separates us from the cold, airless void of space ",
-     radius:"6,371 km",
-     distance:"149.6 million km",
-     mass: "5.972 × 10^24 kg",
-     length: "24h",
-     gravity: "9.80665 m / s2",
-     orbital:"365 days"
+    radius:"6,371 km",
+    distance:"149.6 million km",
+    mass: "5.972 × 10^24 kg",
+    length: "24h",
+    gravity: "9.80665 m / s2",
+    orbital:"365 days"
   }
   this.Mars = {
+    img: "mars.jpg",
     name: "Mars",
     description: " Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury.",
-     radius:": 3,390 km",
-     distance:"227.9 million km",
-     mass: "6.39 × 10^23 kg ",
-     length: "1d 0h 40m",
-     gravity: "3.711 m/s²",
-     orbital:"687 days"
+    radius:": 3,390 km",
+    distance:"227.9 million km",
+    mass: "6.39 × 10^23 kg ",
+    length: "1d 0h 40m",
+    gravity: "3.711 m/s²",
+    orbital:"687 days"
   }
   this.Jupiter= {
+    img: "jupiter.jpg",
     name: "Jupiter",
     description: " Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.",
-     radius:"69,911 km",
-     distance:"778.5 million km",
-     mass: "1.898 × 10^27 kg",
-     length: "0d 9h 56m",
-     gravity: "24.79 m/s²",
-     orbital:"12 years"
+    radius:"69,911 km",
+    distance:"778.5 million km",
+    mass: "1.898 × 10^27 kg",
+    length: "0d 9h 56m",
+    gravity: "24.79 m/s²",
+    orbital:"12 years"
   }
   this.Saturn= {
+    img: "saturn.jpg",
     name: "Saturn",
     description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.",
-     radius:"58,232 km",
-     distance:"1.429 billion km",
-     mass: "5.683 × 10^26 kg",
-     length: "0d 10h 42m",
-     gravity: "10.44 m/s²",
-     orbital:"29 years"
+    radius:"58,232 km",
+    distance:"1.429 billion km",
+    mass: "5.683 × 10^26 kg",
+    length: "0d 10h 42m",
+    gravity: "10.44 m/s²",
+    orbital:"29 years"
   }
   this.Uranus= {
+    img: "uranus.jpg",
     name: "Uranus",
     description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
     radius:"25,362 km",
@@ -267,6 +275,7 @@ angular.module('starter.services', [])
     orbital:"84 years"
   }
   this.Neptune= {
+    img: "neptune.jpg",
     name: "Neptune",
     description: "Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense.",
     radius:"24,622 km",
@@ -277,6 +286,7 @@ angular.module('starter.services', [])
     orbital:"165 years"
   }
   this.Pluto= {
+    img: "pluto.jpg",
     name: "Pluto",
     description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune.",
     radius:"1,186 km",
@@ -287,6 +297,7 @@ angular.module('starter.services', [])
     orbital:"248 years"
   }
   this.Top= {
+    img: "top.jpg",
     name: "Solar System",
     description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune."
   }

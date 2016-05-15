@@ -12,21 +12,21 @@
         <h2>Discovered in 1955</h2>
       </div>
       <div class="item item-body">
-        <!--
-        <img class="full-image" ng-src="img/planets-mini/sun.jpg">
-        -->
+        <img class="full-image" ng-src="img/planets-mini/{{infoToDisplay.img}}">
+        Description:
         <p>{{infoToDisplay.description}}</p>
-
-
-        Name:This is the planet name
-        Description: A little description about the planet characteristics
-        Radius:The length from the center of the planet to the surface
-        Distance:Distance from the sun
-        Mass:Measure of the planet mass
-        Length:Duration of the planet  rotation over its own axis
-        Orbital:Planet year duration in   Earth days or years
-        Gravity:Planet gravity acceleration
-
+        Radius:
+        <p>{{infoToDisplay.radius}}</p>
+        Distance to the Sun:
+        <p>{{infoToDisplay.distance}}</p>
+        Mass:
+        <p>{{infoToDisplay.mass}}</p>
+        Length:
+        <p>{{infoToDisplay.length}}</p>
+        Orbital:
+        <p>{{infoToDisplay.orbital}}</p>
+        Gravity:
+        <p>{{infoToDisplay.gravity}}</p>
       </div>
     </div>
   </ion-content>
