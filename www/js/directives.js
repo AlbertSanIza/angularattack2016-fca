@@ -145,7 +145,6 @@ angular.module('starter.directives', [])
           StarFighterEngineLight = new THREE.PointLight(0x00ccff, 1, 20);
           StarFighterEngineLight.position.set(0, 0, -10);
           camera.add(StarFighterEngineLight);
-
         });
       }
       clock = new THREE.Clock();
