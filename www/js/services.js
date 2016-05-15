@@ -188,3 +188,28 @@ angular.module('starter.services', [])
   };
 
 })
+
+.service('PlanetsInfo', function () {
+
+  this.Sun = {
+    name: "Sun",
+    description: "esta bien caliente"
+  }
+  this.Mercury = {
+    name: "Mercury",
+    description: "esta bien caliente"
+  }
+
+  this.set = function(theView) {
+    console.log(theView);
+    var theInfo;
+    switch (theView) {
+      case "sun":
+      theInfo = this.Sun;
+      break;
+    };
+    
+    return theInfo;
+
+  }
+})

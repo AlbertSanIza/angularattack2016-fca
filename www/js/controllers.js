@@ -1,23 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl', function($scope, $ionicModal) {
+.controller('MainCtrl', function($scope, $ionicModal, PlanetsInfo) {
 
   $scope.Data = {
     selectedView: 'top',
     stereoEffect: false
   };
 
-  $ionicModal.fromTemplateUrl('templates/settings.html', {
+  $ionicModal.fromTemplateUrl('templates/description.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
-    $scope.settingsModal = modal;
+    $scope.descriptionModal = modal;
   });
-  $scope.openSettingsModal = function() {
-    $scope.settingsModal.show();
+  $scope.openDescriptionModal = function() {
+    $scope.infoToDisplay = PlanetsInfo.set("sun");
+    $scope.descriptionModal.show();
   };
-  $scope.closeSettingsModal = function() {
-    $scope.settingsModal.hide();
+  $scope.closeDescriptionModal = function() {
+    $scope.descriptionModal.hide();
   };
 
 })

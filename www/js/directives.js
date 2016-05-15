@@ -325,8 +325,8 @@ angular.module('starter.directives', [])
       }
     });
 
-    $scope.openInfo = function(theView) {
-      $scope.$parent.openSettingsModal();
+    $scope.openInfo = function() {
+      $scope.$parent.openDescriptionModal();
     };
   };
 })
