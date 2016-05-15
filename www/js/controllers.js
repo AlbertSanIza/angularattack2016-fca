@@ -31,6 +31,7 @@ angular.module('starter.controllers', [])
   $scope.cardboardMode = function() {
     $scope.Data.stereoEffect = !$scope.Data.stereoEffect;
   };
+
   function readDeviceOrientationInitial() {
     if (Math.abs(window.orientation) === 90) {
       $scope.Data.landscapeMode = true;
