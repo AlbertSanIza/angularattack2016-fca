@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.voteNow = function() {
-    window.location.href = "http://fca.2016.angularattack.io/www/"
+    window.location.href = "https://www.angularattack.com/entries/3409-full-code-alchemist"
   };
 
   function readDeviceOrientationInitial() {
