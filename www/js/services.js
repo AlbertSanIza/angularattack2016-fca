@@ -199,98 +199,98 @@ angular.module('starter.services', [])
   }
   this.Mercury = {
     name: "Mercury",
-    description: "Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth."
-    radius: "2,440 km"
-    distance: "57.91 million km"
+    description: "Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth.",
+    radius: "2,440 km",
+    distance: "57.91 million km",
     mass: "3.285 × 10^23 kg "
-    length : "58d 15h 30m"
-    orbital: "88 days"
+    length: "58d 15h 30m",
+    orbital: "88 days",
     gravity: "3.7 m/s²"
   }
 
   this.Venus = {
     name: "Venus",
-    description: " Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite. "
-     radius:"6,052 km"
-     distance:"108.2 million km"
-     mass: "4.867 × 10^24 kg "
-     length: "116d 18h 0m"
-     gravity: "8.87m/s²"
+    description: " Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite.",
+     radius:"6,052 km",
+     distance:"108.2 million km",
+     mass: "4.867 × 10^24 kg ",
+     length: "116d 18h 0m",
+     gravity: "8.87m/s²",
      orbital:"225 days"
   }
   this.Earth = {
     name: "Earth",
-    description: " Earth, our home planet, is the only planet in our solar system known to harbor life - life that is incredibly diverse. All the things we need to survive exist under a thin layer of atmosphere that separates us from the cold, airless void of space "
-     radius:"6,371 km"
-     distance:"149.6 million km"
-     mass: "5.972 × 10^24 kg"
-     length: "24h"
-     gravity: "9.80665 m / s2"
+    description:" Earth, our home planet, is the only planet in our solar system known to harbor life - life that is incredibly diverse. All the things we need to survive exist under a thin layer of atmosphere that separates us from the cold, airless void of space ",
+     radius:"6,371 km",
+     distance:"149.6 million km",
+     mass: "5.972 × 10^24 kg",
+     length: "24h",
+     gravity: "9.80665 m / s2",
      orbital:"365 days"
   }
   this.Mars = {
     name: "Mars",
-    description: " Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. "
-     radius:": 3,390 km"
-     distance:"227.9 million km"
-     mass: "6.39 × 10^23 kg "
-     length: "1d 0h 40m"
-     gravity: "3.711 m/s²"
+    description: " Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury.",
+     radius:": 3,390 km",
+     distance:"227.9 million km",
+     mass: "6.39 × 10^23 kg ",
+     length: "1d 0h 40m",
+     gravity: "3.711 m/s²",
      orbital:"687 days"
   }
 
   this.Jupiter= {
     name: "Jupiter",
-    description: " Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined. "
-     radius:"69,911 km"
-     distance:"778.5 million km"
-     mass: "1.898 × 10^27 kg  "
-     length: "0d 9h 56m"
-     gravity: "24.79 m/s²"
+    description: " Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.",
+     radius:"69,911 km",
+     distance:"778.5 million km",
+     mass: "1.898 × 10^27 kg",
+     length: "0d 9h 56m",
+     gravity: "24.79 m/s²",
      orbital:"12 years"
   }
   this.Saturn= {
     name: "Saturn",
-    description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth."
-     radius:"58,232 km"
-     distance:"1.429 billion km"
-     mass: "5.683 × 10^26 kg "
-     length: "0d 10h 42m"
-     gravity: "10.44 m/s²"
+    description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.",
+     radius:"58,232 km",
+     distance:"1.429 billion km",
+     mass: "5.683 × 10^26 kg",
+     length: "0d 10h 42m",
+     gravity: "10.44 m/s²",
      orbital:"29 years"
   }
 
   this.Uranus= {
     name: "Uranus",
-    description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System."
-     radius:"25,362 km"
-     distance:"2.877 billion km"
-     mass: "8.681 × 10^25 kg "
-     length: "0d 17h 14m"
-     gravity: "8.69 m/s²"
+    description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
+     radius:"25,362 km",
+     distance:"2.877 billion km",
+     mass: "8.681 × 10^25 kg ",
+     length: "0d 17h 14m",
+     gravity: "8.69 m/s²",
      orbital:"84 years"
   }
 
 
   this.Neptune= {
     name: "Neptune",
-    description: "Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense."
-     radius:"24,622 km"
-     distance:"4.498 billion km"
-     mass: "1.024 × 10^26 kg "
-     length: "0d 16h 6m"
-     gravity: "11.15 m/s²"
+    description: "Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense.",
+     radius:"24,622 km",
+     distance:"4.498 billion km",
+     mass: "1.024 × 10^26 kg ",
+     length: "0d 16h 6m",
+     gravity: "11.15 m/s²",
      orbital:"165 years"
   }
 
   this.Pluto= {
     name: "Pluto",
-    description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune."
-     radius:"1,186 km"
-     distance:"5.91 billion km"
-     mass: "1.30900 × 10^22 kg "
-     length: "6 d 9 h  36m"
-     gravity: "0.62 m/s²"
+    description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune.",
+     radius:"1,186 km",
+     distance:"5.91 billion km",
+     mass: "1.30900 × 10^22 kg",
+     length: "6 d 9 h  36m",
+     gravity: "0.62 m/s²",
      orbital:"248 years"
   }
 
