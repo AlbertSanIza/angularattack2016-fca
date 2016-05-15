@@ -32,6 +32,10 @@ angular.module('starter.controllers', [])
     $scope.Data.stereoEffect = !$scope.Data.stereoEffect;
   };
 
+  $scope.voteNow = function() {
+    window.location.href = "http://fca.2016.angularattack.io/www/"
+  };
+
   function readDeviceOrientationInitial() {
     if (Math.abs(window.orientation) === 90) {
       $scope.Data.landscapeMode = true;

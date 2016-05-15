@@ -83,3 +83,11 @@ solar-carrousel {
 .position-right {
   right: 0px;
 }
+.voteButton {
+  position: absolute;
+  text-align: center;
+  right: 0px;
+  height: 40px;
+  bottom: 20px;
+  width: 150px;
+}
