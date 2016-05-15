@@ -283,7 +283,11 @@ angular.module('starter.directives', [])
         }
       }
       // Show StarFighter
-      
+      if(StarFighter != null && $scope.landscapeMode == true) {
+        if(StarFighter.visible == false) {
+          StarFighter.visible = true;
+        }
+      }
       // Magic Zone End
       if($scope.stereoEffect == true) {
         effect.render(scene, camera);
@@ -320,9 +324,7 @@ angular.module('starter.directives', [])
 
     $scope.$watch('landscapeMode', function() {
       if(StarFighter) {
-        if($scope.landscapeMode) {
-          StarFighter.visible = true;
-        } else {
+        if(!$scope.landscapeMode) {
           StarFighter.visible = false;
         }
       }
