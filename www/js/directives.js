@@ -397,22 +397,15 @@ angular.module('starter.directives', [])
   };
   function link($scope, $element, $attr) {
     $scope.viewPre = function() {
-      var audio;
       switch ($scope.selectedView) {
         case "sun":
         $scope.selectedView = "top";
-        audio = new Audio('mp3/sun.mp3');
-        audio.play();
         break;
         case "mercury":
         $scope.selectedView = "sun";
-        audio = new Audio('mp3/sun.mp3');
-        audio.play();
         break;
         case "venus":
         $scope.selectedView = "mercury";
-        audio = new Audio('mp3/mercury.mp3');
-        audio.play();
         break;
         case "earth":
         $scope.selectedView = "venus";
@@ -478,5 +471,67 @@ angular.module('starter.directives', [])
         break;
       }
     };
+  };
+})
+
+
+.directive('solarSound', function() {
+  return {
+    'restrict': 'E',
+    'template': ' ',
+    'scope': {
+      'selectedView': '='
+    },
+    'link': link
+  };
+  function link($scope, $element, $attr) {
+    $scope.$watch('selectedView', function() {
+      switch ($scope.selectedView) {
+        case "sun":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "mercury":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "venus":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "earth":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "mars":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "jupiter":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "saturn":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "uranus":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "neptune":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "pluto":
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+        case "top":
+        var audio = new Audio('mp3/mercury.mp3');
+        audio.play();
+        break;
+      }
+    });
   };
 })
