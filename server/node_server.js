@@ -10,7 +10,7 @@ var time = 1/10*2;
 function timezone()
 {
    integer=integer+.0001;
-   console.log(integer);
+   //console.log();
    setTimeout(timezone, time);
 }
 
