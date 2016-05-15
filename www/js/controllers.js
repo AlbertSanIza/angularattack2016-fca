@@ -31,7 +31,17 @@ angular.module('starter.controllers', [])
   $scope.cardboardMode = function() {
     $scope.Data.stereoEffect = !$scope.Data.stereoEffect;
   };
-
+  function readDeviceOrientationInitial() {
+    if (Math.abs(window.orientation) === 90) {
+      $scope.Data.landscapeMode = true;
+      $scope.Data.isMobile = false;
+    } else {
+      $scope.Data.landscapeMode = false;
+      $scope.Data.moveStarFighter = false;
+      $scope.Data.stereoEffect = false;
+    }
+  };
+  readDeviceOrientationInitial();
   function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
       // Landscape - true
