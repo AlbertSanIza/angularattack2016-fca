@@ -22,4 +22,10 @@ angular.module('starter.controllers', [])
     $scope.descriptionModal.hide();
   };
 
+  function readDeviceOrientation() {
+    if (Math.abs(window.orientation) === 90) {
+    } else {
+    }
+  }
+  window.addEventListener('orientationchange', readDeviceOrientation, false);
 })
