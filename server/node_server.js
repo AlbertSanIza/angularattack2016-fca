@@ -5,7 +5,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 var integer = 0;
-var time = 1/10*2;
+var time = 1/10000*1.5;
 
 function timezone()
 {
