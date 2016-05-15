@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 
   $scope.Data = {
     selectedView: 'top',
+    isMobile: false,
     stereoEffect: false
   };
 
