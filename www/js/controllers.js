@@ -48,6 +48,7 @@ angular.module('starter.controllers', [])
       // Landscape - true
       $scope.$apply(function () {
         $scope.Data.landscapeMode = true;
+        $scope.closeDescriptionModal();
       });
     } else {
       // Portrait - false
