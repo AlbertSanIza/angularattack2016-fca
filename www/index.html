@@ -42,26 +42,11 @@
 </head>
 <body ng-app="starter" ng-controller="MainCtrl">
   <ion-content scroll="false" padding="false">
-    <solar-system
-    selected-view="Data.selectedView"
-    is-mobile="Data.isMobile"
-    stereo-effect="Data.stereoEffect"
-    landscape-mode="Data.landscapeMode"
-    move-star-fighter="Data.moveStarFighter"
-    ></solar-system>
+    <solar-system selected-view="Data.selectedView" is-mobile="Data.isMobile" stereo-effect="Data.stereoEffect" landscape-mode="Data.landscapeMode" move-star-fighter="Data.moveStarFighter"></solar-system>
     <div class="diableDrag"></div>
-    <solar-selector
-    selected-view="Data.selectedView"
-    landscape-mode="Data.landscapeMode"
-    ></solar-selector>
-    <solar-selection
-    selected-view="Data.selectedView"
-    landscape-mode="Data.landscapeMode"
-    ></solar-selection>
-    <solar-carrousel
-    selected-view="Data.selectedView"
-    landscape-mode="Data.landscapeMode"
-    ></solar-carrousel>
+    <solar-selector selected-view="Data.selectedView" landscape-mode="Data.landscapeMode" ></solar-selector>
+    <solar-selection selected-view="Data.selectedView" landscape-mode="Data.landscapeMode"></solar-selection>
+    <solar-carrousel selected-view="Data.selectedView" landscape-mode="Data.landscapeMode"></solar-carrousel>
   </ion-content>
 </body>
 </html>
