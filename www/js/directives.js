@@ -488,7 +488,7 @@ angular.module('starter.directives', [])
     $scope.$watch('selectedView', function() {
       switch ($scope.selectedView) {
         case "sun":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/sun.mp3');
         audio.play();
         break;
         case "mercury":
@@ -496,39 +496,39 @@ angular.module('starter.directives', [])
         audio.play();
         break;
         case "venus":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/venus.mp3');
         audio.play();
         break;
         case "earth":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/earth.mp3');
         audio.play();
         break;
         case "mars":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/mars.mp3');
         audio.play();
         break;
         case "jupiter":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/jupiter.mp3');
         audio.play();
         break;
         case "saturn":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/saturn.mp3');
         audio.play();
         break;
         case "uranus":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/uranus.mp3');
         audio.play();
         break;
         case "neptune":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/neptune.mp3');
         audio.play();
         break;
         case "pluto":
-        audio = new Audio('mp3/mercury.mp3');
+        audio = new Audio('mp3/pluto.mp3');
         audio.play();
         break;
         case "top":
-        var audio = new Audio('mp3/mercury.mp3');
+        var audio = new Audio('mp3/top.mp3');
         audio.play();
         break;
       }
