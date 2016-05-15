@@ -202,7 +202,7 @@ angular.module('starter.services', [])
     description: "Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth.",
     radius: "2,440 km",
     distance: "57.91 million km",
-    mass: "3.285 × 10^23 kg "
+    mass: "3.285 × 10^23 kg",
     length: "58d 15h 30m",
     orbital: "88 days",
     gravity: "3.7 m/s²"
@@ -213,7 +213,7 @@ angular.module('starter.services', [])
     description: " Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite.",
      radius:"6,052 km",
      distance:"108.2 million km",
-     mass: "4.867 × 10^24 kg ",
+     mass: "4.867 × 10^24 kg",
      length: "116d 18h 0m",
      gravity: "8.87m/s²",
      orbital:"225 days"
