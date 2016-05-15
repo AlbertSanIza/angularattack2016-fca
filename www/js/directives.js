@@ -17,7 +17,7 @@ angular.module('starter.directives', [])
 
     var t = 100 * Math.random();
     var tChangeRate = 0.001, tDelta = 0;
-    var socket = io('http://192.168.1.66:3000');
+    var socket = io('http://45.55.7.57:3000');
     var scene, camera, renderer, element, container, effect, controls, ambientLight, clock;
     var StarFighter, StarFighterPosition = {x: 0, y: 0, z: 0}, StarFighterEngineLight, StarFighterSpeed = 1.5;
 
