@@ -328,10 +328,8 @@ angular.module('starter.directives', [])
     $scope.goToView = function(theView) {
       $scope.selectedView = theView;
       if($scope.selectedView == "top") {
-        $scope.hideTitleView = true;
       } else {
-        $scope.selectedViewName = $scope.selectedView.toUpperCase();
-        $scope.hideTitleView = false;
+        $scope.selectedViewName = $scope.selectedView.toUpperCase();        
       }
     }
   };
