@@ -5,6 +5,13 @@
   width: 100%;
   height: 100%;
 }
+.topControls {
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  height: calc(100% - 40px);
+}
 .bottomControls {
   position: absolute;
   text-align: center;
