@@ -5,16 +5,74 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <title></title>
+  <link href="www/lib/ionic/css/ionic.css" rel="stylesheet">
+  <script src="www/lib/ionic/js/ionic.bundle.js"></script>
+  <link href="app/app.css" rel="stylesheet">
+  <script src="app/app.js"></script>
+  <body ng-app="starter" ng-controller="MainCtrl">
+    <div class="bar bar-header bar-dark">
+      <h1 class="title">Full Code Alchemist</h1>
+    </div>
+    </ion-nav-bar>
+    <ion-content scroll="false" padding="false">
+      <ion-slide-box>
+        <ion-slide>
+          <div class="centered">
+            <h1>Solar System</h1>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="centered">Created by using some amazing technologies such as...</div>
+        </ion-slide>
+        <ion-slide>
+          <div class="centered">
+            <img src="app/img/angularjs_logo.png" style="max-height: 80%; max-width: 80%;">
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="centered">
+            <img src="app/img/ionic_logo.png" style="max-height: 80%; max-width: 80%;">
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="centered">
+            <img src="app/img/threejs_logo.png" style="max-height: 80%; max-width: 80%;">
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="centered">
+            And many more...
+            <br>
+            <br>
+            by:
+            <br>
+            <img src="www/img/fca_logo.png" style="max-height: 80%; max-width: 80%;">
+            <br>
+            Albert Sanchez
+            <br>
+            Manuel Medrano
+            <br>
+            André Breton
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+      <div class="bar bar-footer bar-dark">
+        <button class="button button-clear pull-left" ng-click="slidePrevious()">Previous</button>
+        <button class="button button-clear pull-right" ng-click="slideNext()">Next</button>
+      </div>
+    </ion-content>
+  </body>
+  </html>
 
+  <!--
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="1;url=http://example.com">
   <script type="text/javascript">
   window.location.href = "http://fca.2016.angularattack.io/www/"
-  </script>
-  <title>Page Redirection</title>
+</script>
+<title>Page Redirection</title>
 </head>
 <body>
-  <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-  If you are not redirected automatically, follow the <a href='http://fca.2016.angularattack.io/www/'>link please</a>
+If you are not redirected automatically, follow the <a href='http://fca.2016.angularattack.io/www/'>link please</a>
 </body>
-</html>
+-->
