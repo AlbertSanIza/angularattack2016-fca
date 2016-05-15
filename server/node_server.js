@@ -16,9 +16,15 @@ function timezone()
    //console.log(integer);
    setTimeout(timezone, time);
 }
-
 timezone();
 
+
+function timesync()
+{
+   io.emit('time', integer);
+   setTimeout(timesync, 5000);
+}
+timesync();
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
