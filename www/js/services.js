@@ -194,7 +194,8 @@ angular.module('starter.services', [])
     name: "Sun",
     description: " The sun, a huge sphere of mostly ionized gas, supports life on Earth. The connection and interactions between the sun and Earth drive the seasons, ocean currents, weather and climate. It is the center of our solar system.",
     radius:"695,700 km",
-    mass: "1.989 × 10^30 kg"
+    mass: "1.989 × 10^30 kg",
+    gravity:"274 m/s²"
   }
   this.Mercury = {
     name: "Mercury",
