@@ -397,15 +397,22 @@ angular.module('starter.directives', [])
   };
   function link($scope, $element, $attr) {
     $scope.viewPre = function() {
+      var audio;
       switch ($scope.selectedView) {
         case "sun":
         $scope.selectedView = "top";
+        audio = new Audio('mp3/sun.mp3');
+        audio.play();
         break;
         case "mercury":
         $scope.selectedView = "sun";
+        audio = new Audio('mp3/sun.mp3');
+        audio.play();
         break;
         case "venus":
         $scope.selectedView = "mercury";
+        audio = new Audio('mp3/mercury.mp3');
+        audio.play();
         break;
         case "earth":
         $scope.selectedView = "venus";
@@ -432,6 +439,7 @@ angular.module('starter.directives', [])
         $scope.selectedView = "pluto";
         break;
       }
+
     };
     $scope.viewNex = function() {
       switch ($scope.selectedView) {
