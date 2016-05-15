@@ -1,12 +1,22 @@
 <ion-modal-view>
-  <ion-header-bar class="bar-positive">
+  <ion-header-bar class="bar-calm">
     <h1 class="title">Description</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeDescriptionModal()">Close</button>
     </div>
   </ion-header-bar>
-  <ion-content>
-    Hello World!
-    {{infoToDisplay}}
+  <ion-content padding="true">
+    <div class="list card">
+      <div class="item">
+        <h1>{{infoToDisplay.name}}</h1>
+        <h2>Discovered in 1955</h2>
+      </div>
+      <div class="item item-body">
+        <!--
+        <img class="full-image" ng-src="img/planets-mini/sun.jpg">
+        -->
+        <p>{{infoToDisplay.description}}</p>
+      </div>
+    </div>
   </ion-content>
 </ion-modal-view>
