@@ -190,7 +190,6 @@ angular.module('starter.services', [])
 })
 
 .service('PlanetsInfo', function () {
-
   this.Sun = {
     name: "Sun",
     description: " The sun, a huge sphere of mostly ionized gas, supports life on Earth. The connection and interactions between the sun and Earth drive the seasons, ocean currents, weather and climate. It is the center of our solar system.",
@@ -207,7 +206,6 @@ angular.module('starter.services', [])
     orbital: "88 days",
     gravity: "3.7 m/s²"
   }
-
   this.Venus = {
     name: "Venus",
     description: " Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite.",
@@ -238,7 +236,6 @@ angular.module('starter.services', [])
      gravity: "3.711 m/s²",
      orbital:"687 days"
   }
-
   this.Jupiter= {
     name: "Jupiter",
     description: " Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.",
@@ -259,43 +256,40 @@ angular.module('starter.services', [])
      gravity: "10.44 m/s²",
      orbital:"29 years"
   }
-
   this.Uranus= {
     name: "Uranus",
     description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
-     radius:"25,362 km",
-     distance:"2.877 billion km",
-     mass: "8.681 × 10^25 kg ",
-     length: "0d 17h 14m",
-     gravity: "8.69 m/s²",
-     orbital:"84 years"
+    radius:"25,362 km",
+    distance:"2.877 billion km",
+    mass: "8.681 × 10^25 kg ",
+    length: "0d 17h 14m",
+    gravity: "8.69 m/s²",
+    orbital:"84 years"
   }
-
-
   this.Neptune= {
     name: "Neptune",
     description: "Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense.",
-     radius:"24,622 km",
-     distance:"4.498 billion km",
-     mass: "1.024 × 10^26 kg ",
-     length: "0d 16h 6m",
-     gravity: "11.15 m/s²",
-     orbital:"165 years"
+    radius:"24,622 km",
+    distance:"4.498 billion km",
+    mass: "1.024 × 10^26 kg ",
+    length: "0d 16h 6m",
+    gravity: "11.15 m/s²",
+    orbital:"165 years"
   }
-
   this.Pluto= {
     name: "Pluto",
     description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune.",
-     radius:"1,186 km",
-     distance:"5.91 billion km",
-     mass: "1.30900 × 10^22 kg",
-     length: "6 d 9 h  36m",
-     gravity: "0.62 m/s²",
-     orbital:"248 years"
+    radius:"1,186 km",
+    distance:"5.91 billion km",
+    mass: "1.30900 × 10^22 kg",
+    length: "6 d 9 h  36m",
+    gravity: "0.62 m/s²",
+    orbital:"248 years"
   }
-
-
-
+  this.Top= {
+    name: "Solar System",
+    description: " Pluto is the most famous dwarf planet. Discovered in 1930, it was long classified as our solar system's ninth planet. Pluto and its busy system of moons orbits the sun in the Kuiper belt, a region of icy debris beyond Neptune."
+  }
   this.set = function(theView) {
     console.log(theView);
     var theInfo;
@@ -303,9 +297,37 @@ angular.module('starter.services', [])
       case "sun":
       theInfo = this.Sun;
       break;
+      case "mercury":
+      theInfo = this.Mercury;
+      break;
+      case "venus":
+      theInfo = this.Venus;
+      break;
+      case "earth":
+      theInfo = this.Earth;
+      break;
+      case "mars":
+      theInfo = this.Mars;
+      break;
+      case "jupiter":
+      theInfo = this.Jupiter;
+      break;
+      case "saturn":
+      theInfo = this.Saturn;
+      break;
+      case "uranus":
+      theInfo = this.Uranus;
+      break;
+      case "neptune":
+      theInfo = this.Neptune;
+      break;
+      case "pluto":
+      theInfo = this.Pluto;
+      break;
+      case "top":
+      theInfo = this.Top;
+      break;
     };
-
     return theInfo;
-
-  }
+  };
 })
