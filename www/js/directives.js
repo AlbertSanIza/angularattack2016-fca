@@ -395,9 +395,86 @@ angular.module('starter.directives', [])
   return {
     'restrict': 'E',
     'templateUrl': 'templates/solarcarrousel.html',
+    'scope': {
+      'selectedView': '=',
+      'landscapeMode': '='
+    },
     'link': link
   };
   function link($scope, $element, $attr) {
-
+    $scope.viewPre = function() {
+      switch ($scope.selectedView) {
+        case "sun":
+        $scope.selectedView = "top";
+        break;
+        case "mercury":
+        $scope.selectedView = "sun";
+        break;
+        case "venus":
+        $scope.selectedView = "mercury";
+        break;
+        case "earth":
+        $scope.selectedView = "venus";
+        break;
+        case "mars":
+        $scope.selectedView = "earth";
+        break;
+        case "jupiter":
+        $scope.selectedView = "mars";
+        break;
+        case "saturn":
+        $scope.selectedView = "jupiter";
+        break;
+        case "uranus":
+        $scope.selectedView = "saturn";
+        break;
+        case "neptune":
+        $scope.selectedView = "uranus";
+        break;
+        case "pluto":
+        $scope.selectedView = "neptune";
+        break;
+        case "top":
+        $scope.selectedView = "pluto";
+        break;
+      }
+    };
+    $scope.viewNex = function() {
+      switch ($scope.selectedView) {
+        case "sun":
+        $scope.selectedView = "mercury";
+        break;
+        case "mercury":
+        $scope.selectedView = "venus";
+        break;
+        case "venus":
+        $scope.selectedView = "earth";
+        break;
+        case "earth":
+        $scope.selectedView = "mars";
+        break;
+        case "mars":
+        $scope.selectedView = "jupiter";
+        break;
+        case "jupiter":
+        $scope.selectedView = "saturn";
+        break;
+        case "saturn":
+        $scope.selectedView = "uranus";
+        break;
+        case "uranus":
+        $scope.selectedView = "neptune";
+        break;
+        case "neptune":
+        $scope.selectedView = "pluto";
+        break;
+        case "pluto":
+        $scope.selectedView = "top";
+        break;
+        case "top":
+        $scope.selectedView = "sun";
+        break;
+      }
+    };
   };
 })
