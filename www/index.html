@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title></title>
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/solarsystem.css" rel="stylesheet">
-    <link href="css/solarselector.css" rel="stylesheet">
-    <link href="css/solarselection.css" rel="stylesheet">
-    <link href="css/solarcarrousel.css" rel="stylesheet">
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/three/three.min.js"></script>
-    <script src="lib/three/StereoEffect.js"></script>
-    <script src="lib/three/DeviceOrientationControls.js"></script>
-    <script src="lib/three/OrbitControls.js"></script>
-    <script src="lib/three/OBJLoader.js"></script>
-    <script src="lib/three/XRingGeometry.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/directives.js"></script>
-    <script src="js/services.js"></script>
-  </head>
-  <body ng-app="starter" ng-controller="MainCtrl">
-    <ion-content scroll="false" padding="false">
-      <solar-system
-      selected-view="Data.selectedView"
-      is-mobile="Data.isMobile"
-      stereo-effect="Data.stereoEffect"
-      landscape-mode="Data.landscapeMode"
-      move-star-fighter="Data.moveStarFighter"
-      ></solar-system>
-      <div class="diableDrag"></div>
-      <solar-selector
-      selected-view="Data.selectedView"
-      landscape-mode="Data.landscapeMode"
-      ></solar-selector>
-      <solar-selection
-      selected-view="Data.selectedView"
-      landscape-mode="Data.landscapeMode"
-      ></solar-selection>
-      <solar-carrousel
-      selected-view="Data.selectedView"
-      landscape-mode="Data.landscapeMode"
-      ></solar-carrousel>
-    </ion-content>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/solarsystem.css" rel="stylesheet">
+  <link href="css/solarselector.css" rel="stylesheet">
+  <link href="css/solarselection.css" rel="stylesheet">
+  <link href="css/solarcarrousel.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/three/three.min.js"></script>
+  <script src="lib/three/StereoEffect.js"></script>
+  <script src="lib/three/DeviceOrientationControls.js"></script>
+  <script src="lib/three/OrbitControls.js"></script>
+  <script src="lib/three/OBJLoader.js"></script>
+  <script src="lib/three/XRingGeometry.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body ng-app="starter" ng-controller="MainCtrl">
+  <ion-content scroll="false" padding="false">
+    <solar-system
+    selected-view="Data.selectedView"
+    is-mobile="Data.isMobile"
+    stereo-effect="Data.stereoEffect"
+    landscape-mode="Data.landscapeMode"
+    move-star-fighter="Data.moveStarFighter"
+    ></solar-system>
+    <div class="diableDrag"></div>
+    <solar-selector
+    selected-view="Data.selectedView"
+    landscape-mode="Data.landscapeMode"
+    ></solar-selector>
+    <solar-selection
+    selected-view="Data.selectedView"
+    landscape-mode="Data.landscapeMode"
+    ></solar-selection>
+    <solar-carrousel
+    selected-view="Data.selectedView"
+    landscape-mode="Data.landscapeMode"
+    ></solar-carrousel>
+  </ion-content>
+</body>
 </html>
