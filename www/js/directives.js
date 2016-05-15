@@ -390,3 +390,14 @@ angular.module('starter.directives', [])
     };
   };
 })
+
+.directive('solarCarrousel', function() {
+  return {
+    'restrict': 'E',
+    'templateUrl': 'templates/solarcarrousel.html',
+    'link': link
+  };
+  function link($scope, $element, $attr) {
+
+  };
+})
