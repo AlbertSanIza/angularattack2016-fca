@@ -282,7 +282,7 @@ angular.module('starter.services', [])
     radius:"1,186 km",
     distance:"5.91 billion km",
     mass: "1.30900 × 10^22 kg",
-    length: "6 d 9 h  36m",
+    length: "6 days, 9 hours,  36 minutes",
     gravity: "0.62 m/s²",
     orbital:"248 years"
   }
