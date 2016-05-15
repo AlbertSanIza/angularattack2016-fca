@@ -193,11 +193,9 @@ angular.module('starter.services', [])
 
   this.Sun = {
     name: "Sun",
-    description: " The sun, a huge sphere of mostly ionized gas, supports life on Earth. The connection and interactions between the sun and Earth drive the seasons, ocean currents, weather and climate. It is the center of our solar system."
-     Radius:"695,700 km"
-     Mass: "1.989 × 10^30 kg"
-
-
+    description: " The sun, a huge sphere of mostly ionized gas, supports life on Earth. The connection and interactions between the sun and Earth drive the seasons, ocean currents, weather and climate. It is the center of our solar system.",
+    radius:"695,700 km",
+    mass: "1.989 × 10^30 kg"
   }
   this.Mercury = {
     name: "Mercury",
@@ -208,10 +206,6 @@ angular.module('starter.services', [])
     length : "58d 15h 30m"
     orbital: "88 days"
     gravity: "3.7 m/s²"
-
-
-
-
   }
 
   this.Venus = {
@@ -300,7 +294,7 @@ angular.module('starter.services', [])
      orbital:"248 years"
   }
 
-  
+
 
   this.set = function(theView) {
     console.log(theView);
