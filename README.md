@@ -46,3 +46,4 @@ If you receive an error message `"You do not have permission to publish to fca.2
 
 It begins at exactly [May 14 at 00:00 UTC](https://www.wolframalpha.com/input/?i=May+14,+2016+0:00+UTC). Once the competition starts,   you can write over this project.
 
+![image](https://github.com/user-attachments/assets/72585720-102c-4fea-8eb6-2bebe60d0d50)
